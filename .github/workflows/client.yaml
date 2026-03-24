@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
     mi-job:
-        uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/deploy-api.yaml@main
+        uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/holamundo.yaml@main
 
         secrets:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
