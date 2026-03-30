@@ -1,11 +1,14 @@
 on: [push]
 
 jobs:
-    mi-job:
+    deploy:
         uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/deploy-api.yaml@main
+        with:
+            image-name: "algo"
+            image-tag: ${{ github.sha }}
         secrets:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
             DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
-    segundo-job:
-        uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/holamundo.yaml@main
+    # segundo-job:
+    #     uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/holamundo.yaml@main
