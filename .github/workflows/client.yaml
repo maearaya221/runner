@@ -1,11 +1,14 @@
-on: [push]
+on:
+    push:
+        tags:
+        - 'v*.*.*'
 
 jobs:
     deploy:
         uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/deploy-api.yaml@main
         with:
-            image-name: "algo"
-            image-tag: ${{ github.sha }}
+            image-name: nueva-imagen-docker
+            image-tag: ${{ github.ref_name }}
         secrets:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
             DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
