@@ -1,0 +1,14 @@
+on:
+    push:
+        tags:
+        - 'v*.*.*' #tags de versionado
+
+jobs:
+    deploy:
+        uses: OscarNeiraN/AAU1104-OscarNeira-Primary/.github/workflows/deploy-api.yaml@main
+        with:
+            image-name: nueva-imagen-docker
+            image-tag: ${{ github.ref_name }}
+        secrets:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
