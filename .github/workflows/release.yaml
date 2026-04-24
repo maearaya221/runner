@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: maearaya221/primary/.github/workflows/deploy-api.yml@main
+    uses: maearaya221/primary/.github/workflows/deploy-api.yaml@main
 
     with:
       image-name: pruebaviernes
