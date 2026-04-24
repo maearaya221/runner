@@ -7,7 +7,7 @@ jobs:
     deploy:
         uses: maearaya221/primary/.github/workflows/deploy-api.yaml@main
         with:
-            image-name: nueva-imagen-docker
+            image-name: pruebaviernes
             image-tag: ${{ github.ref_name }}
         secrets:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
