@@ -1,14 +1,18 @@
+name: Deploy
+
 on:
-    push:
-        tags:
-        - 'v*.*.*' #tags de versionado
+  push:
+    tags:
+      - 'v*.*.*'
 
 jobs:
-    deploy:
-        uses: maearaya221/primary/.github/workflows/deploy-api.yaml@main
-        with:
-            image-name: pruebaviernes
-            image-tag: ${{ github.ref_name }}
-        secrets:
-            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  deploy:
+    uses: maearaya221/primary/.github/workflows/deploy-api.yml@main
+
+    with:
+      image-name: pruebaviernes
+      image-tag: ${{ github.ref_name }}
+
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
